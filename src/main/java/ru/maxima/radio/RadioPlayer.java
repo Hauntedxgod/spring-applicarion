@@ -1,9 +1,7 @@
 package ru.maxima.radio;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
 
 interface Music{
 
@@ -39,14 +37,15 @@ class MaximumRadio implements Music{
         arr.add("9pi");
         arr.add("Mercury");
 
-        Random random = new Random();
-        for (int i = 0; i < arr.size(); i++) {
-            int a = random.nextInt(3);
-            System.out.println("Track - " + arr.get(a));
+
+    Collections.shuffle(arr);
+    String result = arr.stream().limit(3).collect(Collectors.joining("\n"));
+    System.out.println(result);
+
+
 
 
         }
-    }
 
 
     @Override
@@ -103,12 +102,11 @@ class RadioEnergy implements Music {
         arr.add("Glass Animals");
         arr.add("Lil Gotit");
 
-        Random random = new Random();
-        for (int i = 0; i < arr.size(); i++) {
-            int a = random.nextInt(3);
-            System.out.println("Track - " + arr.get(a));
+        Collections.shuffle(arr);
+        String result = arr.stream().limit(3).collect(Collectors.joining("\n"));
+        System.out.println(result);
         }
-    }
+
 
     @Override
     public  void playSong() {
@@ -155,11 +153,9 @@ class RadioRelax implements Music {
         arr.add("Da Baby");
         arr.add("Jeembo");
 
-        Random random = new Random();
-        for (int i = 0; i < arr.size(); i++) {
-            int a = random.nextInt(3);
-            System.out.println("Track - " + arr.get(a));
-        }
+        Collections.shuffle(arr);
+        String result = arr.stream().limit(3).collect(Collectors.joining("\n"));
+        System.out.println(result);
     }
 
 
