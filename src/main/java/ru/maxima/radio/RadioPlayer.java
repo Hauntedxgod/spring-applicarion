@@ -12,57 +12,14 @@ interface Music{
 
     void arr();
 
-    void playSong();
-
 }
 class MaximumRadio implements Music{
 
-
-    private String song;
     private List<String> arr;
-    public MaximumRadio(String song) {
-        this.song = song;
-    }
 
     public MaximumRadio() {
 
     }
-
-@Override
-    public void arr(){
-        arr = new LinkedList<>();
-        arr.add("Play Alblack");
-        arr.add("Play Respouns");
-        arr.add("50cent");
-        arr.add("9pi");
-        arr.add("Mercury");
-
-
-    Collections.shuffle(arr);
-    String result = arr.stream().limit(3).collect(Collectors.joining("\n"));
-    System.out.println(result);
-
-
-
-
-        }
-
-
-    @Override
-    public void playSong() {
-        System.out.println(song);
-    }
-
-
-    public void setArr(List arr) {
-    }
-}
-class RadioEnergy implements Music {
-
-
-    private List<String> arr;
-    private String song ;
-
 
 
     public List<String> getArr() {
@@ -73,50 +30,44 @@ class RadioEnergy implements Music {
         this.arr = arr;
     }
 
-    public String getSong() {
-        return song;
+    @Override
+    public void arr() {
+        Random random = new Random();
+        System.out.println(arr.get(random.nextInt(3)));
     }
 
-    public void setSong(String song) {
-        this.song = song;
+}
+class RadioEnergy implements Music {
+
+
+    private List<String> arr;
+
+
+
+    public List<String> getArr() {
+        return arr;
     }
 
-    public RadioEnergy(String song) {
-        this.song = song;
+    public void setArr(List<String> arr) {
+        this.arr = arr;
     }
-
     public RadioEnergy() {
 
     }
-
     public RadioEnergy(List<String> arr) {
         this.arr = arr;
     }
 
     @Override
     public void arr() {
-        arr = new LinkedList<>();
-        arr.add("KENTUKKI");
-        arr.add("Donor");
-        arr.add("Kizaru");
-        arr.add("Glass Animals");
-        arr.add("Lil Gotit");
-
-        Collections.shuffle(arr);
-        String result = arr.stream().limit(3).collect(Collectors.joining("\n"));
-        System.out.println(result);
-        }
-
-
-    @Override
-    public  void playSong() {
-        System.out.println(song);
+        Random random = new Random();
+        System.out.println(arr.get(random.nextInt(3)));
     }
+
 
 }
 class RadioRelax implements Music {
 
-    private String song ;
     private List<String> arr;
 
     public List<String> getArr() {
@@ -127,18 +78,6 @@ class RadioRelax implements Music {
         this.arr = arr;
     }
 
-    public String getSong() {
-        return song;
-    }
-
-    public void setSong(String song) {
-        this.song = song;
-
-    }
-
-    public RadioRelax(String song) {
-        this.song = song;
-    }
 
     public RadioRelax() {
 
@@ -146,39 +85,34 @@ class RadioRelax implements Music {
 
     @Override
     public void arr() {
-        arr = new LinkedList<>();
-        arr.add("Nkeeei");
-        arr.add("Pharaoh");
-        arr.add("Lil Eazzyy");
-        arr.add("Da Baby");
-        arr.add("Jeembo");
-
-        Collections.shuffle(arr);
-        String result = arr.stream().limit(3).collect(Collectors.joining("\n"));
-        System.out.println(result);
+        Random random = new Random();
+        System.out.println(arr.get(random.nextInt(3)));
     }
 
-
-    @Override
-    public  void playSong() {
-        System.out.println(song);
-    }
-
-
-    public void setArr(String arr) {
-    }
 }
-public class RadioPlayer{
+public class RadioPlayer {
 
-    private Music music;
+    private List<Music> music;
 
-
-    public RadioPlayer(Music music) {
+    public RadioPlayer(List<Music> music) {
         this.music = music;
     }
 
-    public void playRadio(){
-        music.arr();
-        }
+    public RadioPlayer() {
     }
 
+    public List<Music> getMusic() {
+        return music;
+    }
+
+    public void setMusic(List<Music> music) {
+        this.music = music;
+    }
+
+    public void playRadio(Integer count) {
+        Random random = new Random();
+        for (int i = 0; i < count; i++) {
+            music.get(random.nextInt(music.size())).arr();
+        }
+    }
+}

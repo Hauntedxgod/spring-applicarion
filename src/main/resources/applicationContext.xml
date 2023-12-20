@@ -2,77 +2,54 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <bean id="relax" class="ru.maxima.radio.RadioRelax">
         <property name="arr">
-               <list>
-                   <value>song1</value>
-                   <value>song2</value>
-                   <value>song3</value>
-               </list>
+            <list>
+                <value>Nkeeei</value>
+                <value>Pharaoh</value>
+                <value>Lil Eazzyy</value>
+                <value>steel</value>
+                <value>Stay</value>
+            </list>
         </property>
     </bean>
     <bean id="maximum" class="ru.maxima.radio.MaximumRadio">
         <property name="arr">
             <list>
-                <value>song1</value>
-                <value>song2</value>
-                <value>song3</value>
+                <value>Play Alblack</value>
+                <value>Play Respouns</value>
+                <value>50cent</value>
+                <value>Lovv66</value>
+                <value>Friendly</value>
             </list>
         </property>
     </bean>
     <bean id="energy" class="ru.maxima.radio.RadioEnergy">
         <property name="arr">
             <list>
-                <value>song1</value>
-                <value>song2</value>
-                <value>song3</value>
+                <value>KENTUKKI</value>
+                <value>Donor</value>
+                <value>Kizaru</value>
+                <value>Akulich</value>
+                <value>pim9</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="player" class="ru.maxima.radio.RadioPlayer">
+        <property name="music">
+            <list>
+                <ref bean="relax" />
+                <ref bean="maximum" />
+                <ref bean="energy" />
             </list>
         </property>
     </bean>
 
-<!--    <bean id="energy"-->
-<!--          class="ru.maxima.radio.RadioEnergy">-->
-<!--        <property name="song1" value="Alblak"/>-->
-<!--        <property name="song2" value="Its my life"/>-->
-<!--        <property name="song3" value="Go to the Reach"/>-->
-<!--    </bean>-->
-<!--    <bean id="maximum"-->
-<!--          class="ru.maxima.radio.MaximumRadio">-->
-<!--        <property name="song1" value="Lovv66"/>-->
-<!--        <property name="song2" value="Favorite"/>-->
-<!--        <property name="song3" value="Frendly"/>-->
-<!--    </bean>-->
-<!--    <bean id="relax"-->
-<!--          class="ru.maxima.radio.RadioRelax">-->
-<!--        <property name="song1" value="Mens"/>-->
-<!--        <property name="song2" value="Lets go"/>-->
-<!--        <property name="song3" value="Gurl"/>-->
-<!--    </bean>-->
-
-
-
-
-<!--    <bean id="stage1" class="ru.maxima.radio.RadioEnergy"/>-->
-<!--    <bean id="stage2" class="ru.maxima.radio.MaximumRadio"/>-->
-<!--    <bean id="stage3" class="ru.maxima.radio.RadioRelax"/>-->
-
-
-<!--    <bean id="stages" class="java.util.ArrayList">-->
-<!--        <constructor-arg>-->
-<!--            <list>-->
-<!--                <ref bean="stage1" />-->
-<!--                <ref bean="stage2" />-->
-<!--                <ref bean="stage3" />-->
-<!--            </list>-->
-<!--        </constructor-arg>-->
-
-<!--    </bean>-->
 
 </beans>
