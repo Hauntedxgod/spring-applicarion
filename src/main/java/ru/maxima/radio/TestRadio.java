@@ -8,6 +8,5 @@ public class TestRadio {
 
         RadioPlayer radioPlayer = context.getBean("player" , RadioPlayer.class);
         radioPlayer.playRadio(3);
-        System.out.println();
     }
 }
